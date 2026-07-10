@@ -1,4 +1,11 @@
 import { PageShell } from "@/components/page-shell";
+import {
+  OverallSystemDiagram,
+  RequestFlowDiagram,
+  GeographicSchedulingDiagram,
+  DistributedInferenceDiagram,
+  PlatformStackDiagram,
+} from "@/components/architecture-diagrams";
 
 const components = [
   {
@@ -39,93 +46,168 @@ const schedulingFactors = [
 export default function ArchitecturePage() {
   return (
     <PageShell>
-      <article className="max-w-4xl space-y-12">
-        <header className="max-w-3xl space-y-5">
-          <h1 className="text-4xl font-medium leading-tight text-foreground sm:text-5xl">
-            Architecture
-          </h1>
-          <p className="text-lg leading-8 text-muted-foreground">
-            Public Intelligence is designed as independent but interconnected
-            systems that together form globally distributed AI infrastructure.
-          </p>
+      <article className="max-w-4xl mx-auto space-y-24">
+        {/* HEADER */}
+        <header className="space-y-6">
+          <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">System Blueprint</span>
+          <div className="space-y-4">
+            <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.15]">
+              Architecture
+            </h1>
+            <p className="max-w-3xl text-xl leading-relaxed text-muted-foreground sm:text-2xl font-light">
+              Public Intelligence is designed as independent but interconnected
+              systems that together form globally distributed AI infrastructure.
+            </p>
+          </div>
         </header>
 
-        <section className="max-w-3xl space-y-4">
-          <h2 className="text-2xl font-medium text-foreground">
-            Overall System
-          </h2>
-          <p className="leading-8 text-muted-foreground">
-            The current architecture centers on three core responsibilities:
-            public documentation, global scheduling, and contributed compute.
-            The system is intentionally modular so each repository can evolve
-            independently while preserving a shared architectural direction.
-          </p>
+        {/* OVERALL SYSTEM */}
+        <section aria-labelledby="system-heading" className="space-y-6 pt-6 border-t border-border/40">
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="md:col-span-1">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">01 // OVERVIEW</span>
+              <h2 id="system-heading" className="text-lg font-semibold text-foreground mt-2">
+                Overall System
+              </h2>
+            </div>
+            <div className="md:col-span-2 space-y-4">
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                The current architecture centers on three core responsibilities:
+                public documentation, global scheduling, and contributed compute.
+                The system is intentionally modular so each repository can evolve
+                independently while preserving a shared architectural direction.
+              </p>
+            </div>
+          </div>
+          <OverallSystemDiagram />
         </section>
 
-        <section className="space-y-5">
-          <h2 className="text-2xl font-medium text-foreground">
-            Core Components
-          </h2>
-          <div className="grid gap-6 md:grid-cols-3">
+        {/* CORE COMPONENTS */}
+        <section aria-labelledby="components-heading" className="space-y-8 pt-6 border-t border-border/40">
+          <div className="space-y-2">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">02 // COMPONENT STACKS</span>
+            <h2 id="components-heading" className="text-2xl font-semibold tracking-tight text-foreground">
+              Core Components
+            </h2>
+            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Detailed breakdown of the active system actors running in the Public Intelligence mesh.
+            </p>
+          </div>
+          
+          <div className="grid gap-8 md:grid-cols-3 pt-4">
             {components.map((component) => (
-              <section key={component.name} className="space-y-3">
-                <h3 className="text-lg font-medium text-foreground">
-                  {component.name}
-                </h3>
-                <p className="text-sm leading-7 text-muted-foreground">
+              <div key={component.name} className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#D9F99D]" />
+                  <h3 className="text-base font-semibold text-foreground">{component.name}</h3>
+                </div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   {component.description}
                 </p>
-              </section>
+              </div>
             ))}
           </div>
         </section>
 
-        <section className="max-w-3xl space-y-5">
-          <h2 className="text-2xl font-medium text-foreground">
-            Request Flow
-          </h2>
-          <ol className="space-y-3 text-muted-foreground">
-            {requestFlow.map((step) => (
-              <li key={step} className="leading-7">
-                {step}
-              </li>
-            ))}
-          </ol>
-          <p className="leading-8 text-muted-foreground">
-            Future versions may involve multiple nodes collaborating on a single
-            inference request, but those implementation details remain open.
-          </p>
+        {/* REQUEST FLOW */}
+        <section aria-labelledby="flow-heading" className="space-y-6 pt-6 border-t border-border/40">
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="md:col-span-1">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">03 // WORKFLOW</span>
+              <h2 id="flow-heading" className="text-lg font-semibold text-foreground mt-2">
+                Inference Request Flow
+              </h2>
+            </div>
+            <div className="md:col-span-2 space-y-4">
+              <ol className="space-y-3 text-sm leading-relaxed text-muted-foreground list-decimal pl-4">
+                {requestFlow.map((step) => (
+                  <li key={step} className="pl-1">
+                    {step}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+          <RequestFlowDiagram />
         </section>
 
-        <section className="max-w-3xl space-y-5">
-          <h2 className="text-2xl font-medium text-foreground">
-            Geographic Scheduling
-          </h2>
-          <p className="leading-8 text-muted-foreground">
-            Geographic awareness is a defining characteristic of the Scheduler.
-            Scheduling decisions should account for where capacity exists and
-            how well that capacity can serve a given request.
-          </p>
-          <ul className="grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-            {schedulingFactors.map((factor) => (
-              <li key={factor}>{factor}</li>
-            ))}
-          </ul>
+        {/* DISTRIBUTED INFERENCE */}
+        <section aria-labelledby="inference-heading" className="space-y-6 pt-6 border-t border-border/40">
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="md:col-span-1">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">04 // SHARDING</span>
+              <h2 id="inference-heading" className="text-lg font-semibold text-foreground mt-2">
+                Distributed Inference
+              </h2>
+            </div>
+            <div className="md:col-span-2 space-y-4">
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                To serve frontier models that exceed the capacity of individual local nodes, the scheduling engine can shard layer workloads across multiple network participants.
+              </p>
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Workload execution routes intermediate tensors sequentially through model shards, returning verified outputs back to the client interface.
+              </p>
+            </div>
+          </div>
+          <DistributedInferenceDiagram />
         </section>
 
-        <section className="max-w-3xl space-y-4">
-          <h2 className="text-2xl font-medium text-foreground">
-            Future Architecture
-          </h2>
-          <p className="leading-8 text-muted-foreground">
-            The platform may expand into protocols, SDKs, monitoring,
-            authentication, developer tools, benchmarking, deployment tooling,
-            and other focused repositories. Each future component should keep a
-            single responsibility and remain replaceable without redesigning the
-            full platform.
-          </p>
+        {/* GEOGRAPHIC SCHEDULING */}
+        <section aria-labelledby="geo-heading" className="space-y-6 pt-6 border-t border-border/40">
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="md:col-span-1">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">05 // METRICS</span>
+              <h2 id="geo-heading" className="text-lg font-semibold text-foreground mt-2">
+                Geographic Scheduling
+              </h2>
+            </div>
+            <div className="md:col-span-2 space-y-4">
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Geographic awareness is a defining characteristic of the Scheduler.
+                Scheduling decisions account for network latencies and regional compute capacities to route requests efficiently.
+              </p>
+              
+              <div className="pt-2">
+                <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground/60 mb-3">Evaluated Metrics</p>
+                <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
+                  {schedulingFactors.map((factor) => (
+                    <li key={factor} className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D9F99D]" />
+                      {factor}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <GeographicSchedulingDiagram />
+        </section>
+
+        {/* FUTURE ARCHITECTURE */}
+        <section aria-labelledby="future-heading" className="space-y-6 pt-6 border-t border-border/40">
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="md:col-span-1">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">06 // PROTOCOLS</span>
+              <h2 id="future-heading" className="text-lg font-semibold text-foreground mt-2">
+                Future Architecture
+              </h2>
+            </div>
+            <div className="md:col-span-2 space-y-4">
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                The platform may expand into protocols, SDKs, monitoring,
+                authentication, developer tools, benchmarking, and deployment tooling.
+              </p>
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Each future component keeps a single responsibility and remains
+                replaceable without redesigning the full platform stack.
+              </p>
+            </div>
+          </div>
+          <PlatformStackDiagram />
         </section>
       </article>
     </PageShell>
   );
 }
+
+
