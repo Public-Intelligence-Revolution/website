@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/page-shell";
+import { PageHeader } from "@/components/page-header";
 
 const categories = [
   {
@@ -92,20 +93,11 @@ export default function ResearchPage() {
   return (
     <PageShell>
       <article className="max-w-4xl mx-auto space-y-24">
-        {/* HEADER */}
-        <header className="space-y-6">
-          <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">Research Hub</span>
-          <div className="space-y-4">
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.15]">
-              Research
-            </h1>
-            <p className="max-w-3xl text-xl leading-relaxed text-muted-foreground sm:text-2xl font-light">
-              Public Intelligence is in the foundation stage. Research focuses on
-              the distributed systems and AI infrastructure needed before
-              production implementation.
-            </p>
-          </div>
-        </header>
+        <PageHeader
+          kicker="Research Hub"
+          title="Research"
+          description="Public Intelligence is in the foundation stage. Research focuses on the distributed systems and AI infrastructure needed before production implementation."
+        />
 
         {/* RESEARCH CATEGORIES */}
         <section aria-labelledby="categories-heading" className="space-y-8 pt-6 border-t border-border/40">
@@ -148,4 +140,3 @@ export default function ResearchPage() {
     </PageShell>
   );
 }
-

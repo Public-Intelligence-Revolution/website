@@ -1,22 +1,15 @@
 import { PageShell } from "@/components/page-shell";
+import { PageHeader } from "@/components/page-header";
 
 export default function VisionPage() {
   return (
     <PageShell>
       <article className="max-w-4xl mx-auto space-y-24">
-        {/* HEADER */}
-        <header className="space-y-6">
-          <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">Vision & Intent</span>
-          <div className="space-y-4">
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.15]">
-              Vision
-            </h1>
-            <p className="max-w-3xl text-xl leading-relaxed text-muted-foreground sm:text-2xl font-light">
-              Public Intelligence is an open engineering initiative building
-              globally distributed, community-owned AI infrastructure.
-            </p>
-          </div>
-        </header>
+        <PageHeader
+          kicker="Vision & Intent"
+          title="Vision"
+          description="Public Intelligence is an open engineering initiative building globally distributed, community-owned AI infrastructure."
+        />
 
         {/* MISSION & DEFINITION */}
         <section aria-labelledby="what-is-heading" className="space-y-6 pt-6 border-t border-border/40">
@@ -162,4 +155,3 @@ export default function VisionPage() {
     </PageShell>
   );
 }
-

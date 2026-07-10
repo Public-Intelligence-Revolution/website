@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/page-shell";
+import { PageHeader } from "@/components/page-header";
 
 const completed = [
   "Long-term vision, mission, and engineering philosophy",
@@ -42,19 +43,11 @@ export default function RoadmapPage() {
   return (
     <PageShell>
       <article className="max-w-4xl mx-auto space-y-20">
-        {/* HEADER */}
-        <header className="space-y-6">
-          <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground/60">Development Timeline</span>
-          <div className="space-y-4">
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.15]">
-              Roadmap
-            </h1>
-            <p className="max-w-3xl text-xl leading-relaxed text-muted-foreground sm:text-2xl font-light">
-              Tracking what Public Intelligence is building now and what
-              comes next. The roadmap evolves as the project progresses.
-            </p>
-          </div>
-        </header>
+        <PageHeader
+          kicker="Development Timeline"
+          title="Roadmap"
+          description="Tracking what Public Intelligence is building now and what comes next. The roadmap evolves as the project progresses."
+        />
 
         {/* TIMELINE */}
         <div className="relative border-l border-border/40 pl-8 ml-4 space-y-16 py-4">
@@ -169,4 +162,3 @@ export default function RoadmapPage() {
     </PageShell>
   );
 }
-

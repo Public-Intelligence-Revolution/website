@@ -3,18 +3,6 @@ import { PageShell } from "@/components/page-shell";
 import { Logo } from "@/components/logo";
 import { SystemDiagram } from "@/components/system-diagram";
 
-const links = [
-  { href: "/vision", label: "Vision" },
-  { href: "/architecture", label: "Architecture" },
-  { href: "/research", label: "Research" },
-  { href: "/roadmap", label: "Roadmap" },
-  {
-    href: "https://github.com/Public-Intelligence-Revolution",
-    label: "GitHub",
-    external: true,
-  },
-];
-
 export default function Home() {
   return (
     <PageShell>
@@ -23,13 +11,11 @@ export default function Home() {
         <section className="space-y-6">
           <Logo className="w-8 h-8 text-foreground/80" />
           <div className="space-y-4">
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl sm:leading-[1.1] max-w-3xl">
+            <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl sm:leading-[1.15] max-w-3xl">
               Public Intelligence
             </h1>
             <p className="max-w-2xl text-xl leading-normal text-muted-foreground sm:text-2xl font-light">
-              Building a globally distributed,
-              <br />
-              community-owned AI infrastructure.
+              Building a globally distributed, community-owned AI infrastructure.
             </p>
           </div>
           <p className="max-w-2xl text-base leading-relaxed text-muted-foreground/80">
@@ -85,14 +71,7 @@ export default function Home() {
           <div className="grid gap-x-12 gap-y-10 md:grid-cols-2 pt-4">
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-foreground">
-                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="3" fill="currentColor" />
-                  <circle cx="6" cy="6" r="1.5" fill="currentColor" fillOpacity="0.4" />
-                  <circle cx="18" cy="6" r="1.5" fill="currentColor" fillOpacity="0.4" />
-                  <circle cx="6" cy="18" r="1.5" fill="currentColor" fillOpacity="0.4" />
-                  <circle cx="18" cy="18" r="1.5" fill="currentColor" fillOpacity="0.4" />
-                  <path d="M6 6L12 12M18 6L12 12M6 18L12 12M18 18L12 12" stroke="currentColor" strokeWidth="1" strokeOpacity="0.3" />
-                </svg>
+                <span className="text-xs font-mono text-[#D9F99D]">01</span>
                 <h3 className="text-base font-semibold">Community Owned</h3>
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
@@ -102,13 +81,7 @@ export default function Home() {
 
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-foreground">
-                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" />
-                  <path d="M4 16L12 20L20 16" stroke="currentColor" strokeOpacity="0.5" />
-                  <path d="M4 8V16" stroke="currentColor" strokeOpacity="0.5" />
-                  <path d="M20 8V16" stroke="currentColor" strokeOpacity="0.5" />
-                  <path d="M12 12V20" stroke="currentColor" strokeOpacity="0.5" />
-                </svg>
+                <span className="text-xs font-mono text-[#D9F99D]">02</span>
                 <h3 className="text-base font-semibold">Open Source & Transparent</h3>
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
@@ -118,12 +91,7 @@ export default function Home() {
 
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-foreground">
-                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" />
-                  <line x1="8" y1="8" x2="16" y2="8" stroke="currentColor" strokeOpacity="0.5" />
-                  <line x1="8" y1="12" x2="14" y2="12" stroke="currentColor" strokeOpacity="0.5" />
-                  <line x1="8" y1="16" x2="12" y2="16" stroke="currentColor" strokeOpacity="0.5" />
-                </svg>
+                <span className="text-xs font-mono text-[#D9F99D]">03</span>
                 <h3 className="text-base font-semibold">Documentation First</h3>
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
@@ -133,12 +101,7 @@ export default function Home() {
 
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-foreground">
-                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.3" />
-                  <line x1="12" y1="3" x2="12" y2="21" stroke="currentColor" strokeOpacity="0.3" />
-                  <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" strokeOpacity="0.3" />
-                  <circle cx="12" cy="12" r="2.5" fill="currentColor" />
-                </svg>
+                <span className="text-xs font-mono text-[#D9F99D]">04</span>
                 <h3 className="text-base font-semibold">Durable Simplicity</h3>
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
@@ -169,36 +132,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* DOCUMENTATION FOOTER */}
-        <footer className="space-y-8 pt-16 border-t border-border/20 text-xs text-muted-foreground/60">
-          <div className="flex flex-wrap items-center justify-between gap-6">
-            <div className="inline-flex items-center gap-2">
-              <Logo className="w-4 h-4 text-muted-foreground/50" />
-              <span>Public Intelligence — Open Infrastructure Initiative</span>
-            </div>
-            <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-2">
-              {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="hover:text-[#D9F99D] transition-colors duration-150"
-                  target={link.external ? "_blank" : undefined}
-                  rel={link.external ? "noreferrer" : undefined}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-          <div className="flex items-center justify-between text-[10px] border-t border-border/10 pt-6 font-mono opacity-80">
-            <p>© {new Date().getFullYear()} Public Intelligence. Released under the MIT License.</p>
-            <p>VER_0.1.0 // FOUNDATIONAL_RELEASE</p>
-          </div>
-        </footer>
       </div>
     </PageShell>
   );
 }
-
-
