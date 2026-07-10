@@ -1,6 +1,13 @@
+import * as React from "react";
 import { PageShell } from "@/components/page-shell";
 import { PageHeader } from "@/components/page-header";
-import { OverallSystemDiagram } from "@/components/architecture-diagrams";
+import {
+  OverallSystemDiagram,
+  RequestFlowDiagram,
+  GeographicSchedulingDiagram,
+  DistributedInferenceDiagram,
+  PlatformStackDiagram,
+} from "@/components/architecture-diagrams";
 
 export default function ArchitecturePage() {
   return (
@@ -12,17 +19,70 @@ export default function ArchitecturePage() {
           description="The technical model and system boundaries for distributed AI infrastructure."
         />
 
-        <section aria-labelledby="topology-heading" className="space-y-6 pt-6 border-t border-border/40">
-          <div className="space-y-2">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">01 // ARCHITECTURAL TOPOLOGY</span>
-            <h2 id="topology-heading" className="text-2xl font-semibold tracking-tight text-foreground">
-              Distributed Inference Coordination
+        <section className="space-y-16">
+          <header className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+              Overall System Topology
             </h2>
-            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              A conceptual schematic showing how workloads are routed from client interfaces to geographic nodes. The active path highlights the coordinated execution of an inference query.
+            <p className="text-muted-foreground max-w-3xl">
+              High-level view of the three-plane architecture: the website portal for user onboarding,
+              the scheduler core as the control plane, and the contributed node network as the execution plane.
             </p>
-          </div>
+          </header>
           <OverallSystemDiagram />
+        </section>
+
+        <section className="space-y-16">
+          <header className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+              Request Flow
+            </h2>
+            <p className="text-muted-foreground max-w-3xl">
+              End-to-end request lifecycle from client submission through scheduler routing to node execution.
+              The active path shows successful routing with direct result return bypassing the scheduler for verification.
+            </p>
+          </header>
+          <RequestFlowDiagram />
+        </section>
+
+        <section className="space-y-16">
+          <header className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+              Geographic Scheduling
+            </h2>
+            <p className="text-muted-foreground max-w-3xl">
+              Latency-based node selection across global regions. The scheduler evaluates candidate nodes
+              and routes to the minimum-latency target (EU-West at 12ms in this example).
+            </p>
+          </header>
+          <GeographicSchedulingDiagram />
+        </section>
+
+        <section className="space-y-16">
+          <header className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+              Distributed Inference
+            </h2>
+            <p className="text-muted-foreground max-w-3xl">
+              Model layer partitioning across multiple compute shards for large-scale inference.
+              Each shard processes a contiguous layer range with pipelined tensor passing.
+            </p>
+          </header>
+          <DistributedInferenceDiagram />
+        </section>
+
+        <section className="space-y-16">
+          <header className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+              Future Platform Stack
+            </h2>
+            <p className="text-muted-foreground max-w-3xl">
+              Four-layer architecture vision: application APIs, orchestration coordination,
+              decentralized transport, and local hardware runtime. The coordination layer is the
+              active development focus.
+            </p>
+          </header>
+          <PlatformStackDiagram />
         </section>
       </article>
     </PageShell>
