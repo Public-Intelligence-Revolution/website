@@ -1,4 +1,5 @@
 import * as React from "react";
+import { diagramTokens } from "./diagram-tokens";
 
 type DiagramCanvasProps = {
   children: React.ReactNode;
@@ -11,8 +12,8 @@ type DiagramCanvasProps = {
 
 export function DiagramCanvas({
   children,
-  width = 760,
-  height = 240,
+  width = diagramTokens.canvas.width,
+  height = diagramTokens.canvas.height,
   className = "",
   title,
   description,
@@ -36,16 +37,16 @@ export function DiagramCanvas({
         <defs>
           <pattern
             id={`grid-${React.useId()}`}
-            width="20"
-            height="20"
+            width={diagramTokens.grid.patternSize}
+            height={diagramTokens.grid.patternSize}
             patternUnits="userSpaceOnUse"
           >
             <path
-              d="M 20 0 L 0 0 0 20"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="0.5"
-              strokeOpacity="0.03"
+              d={`M ${diagramTokens.grid.patternSize} 0 L 0 0 0 ${diagramTokens.grid.patternSize}`}
+              fill={diagramTokens.color.none}
+              stroke={diagramTokens.color.inherited}
+              strokeWidth={diagramTokens.grid.patternStrokeWidth}
+              strokeOpacity={diagramTokens.grid.patternStrokeOpacity}
             />
           </pattern>
         </defs>
@@ -53,7 +54,7 @@ export function DiagramCanvas({
           width={width}
           height={height}
           fill={`url(#grid-${React.useId()})`}
-          rx="6"
+          rx={diagramTokens.canvas.radius}
         />
         {children}
       </svg>

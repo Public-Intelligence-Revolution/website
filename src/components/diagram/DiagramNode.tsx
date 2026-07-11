@@ -1,4 +1,5 @@
 import * as React from "react";
+import { diagramTokens } from "./diagram-tokens";
 
 type DiagramNodeProps = {
   x: number;
@@ -12,17 +13,11 @@ type DiagramNodeProps = {
   children?: React.ReactNode;
 };
 
-const NODE_WIDTH = 140;
-const NODE_HEIGHT = 60;
-const NODE_HEIGHT_COMPACT = 50;
-const BORDER_RADIUS = 3;
-const STROKE_WIDTH = 1;
-
 export function DiagramNode({
   x,
   y,
-  width = NODE_WIDTH,
-  height = NODE_HEIGHT,
+  width = diagramTokens.node.width,
+  height = diagramTokens.node.height,
   label,
   detail,
   active = false,
@@ -36,27 +31,47 @@ export function DiagramNode({
         y="0"
         width={width}
         height={height}
-        rx={BORDER_RADIUS}
-        stroke={active ? "#D9F99D" : "currentColor"}
-        strokeWidth={STROKE_WIDTH}
-        strokeOpacity={active ? 0.4 : 0.18}
-        fill="var(--background, #0f0f11)"
+        rx={diagramTokens.node.radius}
+        stroke={active ? diagramTokens.color.active : diagramTokens.color.inherited}
+        strokeWidth={diagramTokens.node.strokeWidth}
+        strokeOpacity={
+          active ? diagramTokens.node.strokeOpacity.active : diagramTokens.node.strokeOpacity.inactive
+        }
+        fill={diagramTokens.node.fill}
       />
       <text
-        x="15"
-        y={height === NODE_HEIGHT_COMPACT ? 20 : 24}
-        fill={active ? "#D9F99D" : "#f3f4f6"}
-        fontSize="11"
-        fontWeight="600"
+        x={diagramTokens.node.textInsetX}
+        y={
+          height === diagramTokens.node.compactHeight
+            ? diagramTokens.node.labelY.compact
+            : diagramTokens.node.labelY.default
+        }
+        fill={
+          active ? diagramTokens.text.label.fill.active : diagramTokens.text.label.fill.inactive
+        }
+        fontSize={diagramTokens.text.label.fontSize}
+        fontWeight={diagramTokens.text.label.fontWeight}
       >
         {label}
       </text>
       <text
-        x="15"
-        y={height === NODE_HEIGHT_COMPACT ? 36 : 42}
-        fill={detailActive ? "#d1d5db" : active ? "#d1d5db" : "#9ca3af"}
-        fontSize="9.5"
-        fontWeight={detailActive ? "500" : "400"}
+        x={diagramTokens.node.textInsetX}
+        y={
+          height === diagramTokens.node.compactHeight
+            ? diagramTokens.node.detailY.compact
+            : diagramTokens.node.detailY.default
+        }
+        fill={
+          detailActive || active
+            ? diagramTokens.text.detail.fill.active
+            : diagramTokens.text.detail.fill.inactive
+        }
+        fontSize={diagramTokens.text.detail.fontSize}
+        fontWeight={
+          detailActive
+            ? diagramTokens.text.detail.fontWeight.active
+            : diagramTokens.text.detail.fontWeight.inactive
+        }
       >
         {detail}
       </text>

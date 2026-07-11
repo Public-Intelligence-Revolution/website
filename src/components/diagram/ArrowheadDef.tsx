@@ -1,17 +1,18 @@
 import * as React from "react";
+import { diagramTokens } from "./diagram-tokens";
 
 export function ArrowheadDef() {
   return (
     <defs>
       <marker
-        id="arrowhead"
-        markerWidth="10"
-        markerHeight="7"
-        refX="0"
-        refY="3.5"
+        id={diagramTokens.arrowhead.id}
+        markerWidth={diagramTokens.arrowhead.markerWidth}
+        markerHeight={diagramTokens.arrowhead.markerHeight}
+        refX={diagramTokens.arrowhead.refX}
+        refY={diagramTokens.arrowhead.refY}
         orient="auto"
       >
-        <polygon points="0 0, 10 3.5, 0 7" fill="#D9F99D" />
+        <polygon points={diagramTokens.arrowhead.points} fill={diagramTokens.color.active} />
       </marker>
     </defs>
   );

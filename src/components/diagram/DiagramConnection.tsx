@@ -1,4 +1,5 @@
 import * as React from "react";
+import { diagramTokens } from "./diagram-tokens";
 
 type DiagramConnectionProps = {
   x1: number;
@@ -21,10 +22,16 @@ export function DiagramConnection({
   controlPoint,
   marker = false,
 }: DiagramConnectionProps) {
-  const stroke = active ? "#D9F99D" : "currentColor";
-  const strokeWidth = active ? 1.2 : 1;
-  const strokeOpacity = active ? 1 : 0.1;
-  const strokeDasharray = active ? "none" : "3 3";
+  const stroke = active ? diagramTokens.color.active : diagramTokens.color.inherited;
+  const strokeWidth = active
+    ? diagramTokens.connection.strokeWidth.active
+    : diagramTokens.connection.strokeWidth.inactive;
+  const strokeOpacity = active
+    ? diagramTokens.connection.strokeOpacity.active
+    : diagramTokens.connection.strokeOpacity.inactive;
+  const strokeDasharray = active
+    ? diagramTokens.connection.dasharray.active
+    : diagramTokens.connection.dasharray.inactive;
 
   if (curved && controlPoint) {
     return (
@@ -34,8 +41,8 @@ export function DiagramConnection({
         strokeWidth={strokeWidth}
         strokeOpacity={strokeOpacity}
         strokeDasharray={strokeDasharray}
-        fill="none"
-        markerEnd={marker ? "url(#arrowhead)" : undefined}
+        fill={diagramTokens.color.none}
+        markerEnd={marker ? `url(#${diagramTokens.arrowhead.id})` : undefined}
       />
     );
   }
@@ -50,7 +57,7 @@ export function DiagramConnection({
       strokeWidth={strokeWidth}
       strokeOpacity={strokeOpacity}
       strokeDasharray={strokeDasharray}
-      markerEnd={marker ? "url(#arrowhead)" : undefined}
+      markerEnd={marker ? `url(#${diagramTokens.arrowhead.id})` : undefined}
     />
   );
 }

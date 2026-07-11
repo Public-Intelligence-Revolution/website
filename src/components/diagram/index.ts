@@ -5,3 +5,4 @@ export { DiagramConnection } from "./DiagramConnection";
 export { DiagramMarker } from "./DiagramMarker";
 export { DiagramCaption } from "./DiagramCaption";
 export { ArrowheadDef } from "./ArrowheadDef";
+export { diagramTokens } from "./diagram-tokens";

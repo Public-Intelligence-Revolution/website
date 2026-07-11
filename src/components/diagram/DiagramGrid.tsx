@@ -1,4 +1,5 @@
 import * as React from "react";
+import { diagramTokens } from "./diagram-tokens";
 
 type DiagramGridProps = {
   width: number;
@@ -9,45 +10,45 @@ type DiagramGridProps = {
 export function DiagramGrid({ width, height, patternId }: DiagramGridProps) {
   return (
     <>
-      <rect width={width} height={height} fill={`url(#${patternId})`} rx="6" />
+      <rect width={width} height={height} fill={`url(#${patternId})`} rx={diagramTokens.canvas.radius} />
       <rect
-        x="0.5"
-        y="0.5"
-        width={width - 1}
-        height={height - 1}
-        rx="6"
-        stroke="currentColor"
-        strokeWidth="1"
-        strokeOpacity="0.08"
-        fill="none"
+        x={diagramTokens.grid.borderInset}
+        y={diagramTokens.grid.borderInset}
+        width={width - diagramTokens.grid.borderOffset}
+        height={height - diagramTokens.grid.borderOffset}
+        rx={diagramTokens.canvas.radius}
+        stroke={diagramTokens.color.inherited}
+        strokeWidth={diagramTokens.grid.borderStrokeWidth}
+        strokeOpacity={diagramTokens.grid.borderStrokeOpacity}
+        fill={diagramTokens.color.none}
       />
       <path
-        d="M 10 0.5 L 0.5 0.5 L 0.5 10"
-        stroke="currentColor"
-        strokeWidth="1"
-        strokeOpacity="0.25"
-        fill="none"
+        d={`M ${diagramTokens.grid.cornerSize} ${diagramTokens.grid.borderInset} L ${diagramTokens.grid.borderInset} ${diagramTokens.grid.borderInset} L ${diagramTokens.grid.borderInset} ${diagramTokens.grid.cornerSize}`}
+        stroke={diagramTokens.color.inherited}
+        strokeWidth={diagramTokens.grid.cornerStrokeWidth}
+        strokeOpacity={diagramTokens.grid.cornerStrokeOpacity}
+        fill={diagramTokens.color.none}
       />
       <path
-        d={`M ${width - 10} 0.5 L ${width - 0.5} 0.5 L ${width - 0.5} 10`}
-        stroke="currentColor"
-        strokeWidth="1"
-        strokeOpacity="0.25"
-        fill="none"
+        d={`M ${width - diagramTokens.grid.cornerSize} ${diagramTokens.grid.borderInset} L ${width - diagramTokens.grid.borderInset} ${diagramTokens.grid.borderInset} L ${width - diagramTokens.grid.borderInset} ${diagramTokens.grid.cornerSize}`}
+        stroke={diagramTokens.color.inherited}
+        strokeWidth={diagramTokens.grid.cornerStrokeWidth}
+        strokeOpacity={diagramTokens.grid.cornerStrokeOpacity}
+        fill={diagramTokens.color.none}
       />
       <path
-        d={`M 0.5 ${height - 10} L 0.5 ${height - 0.5} L 10 ${height - 0.5}`}
-        stroke="currentColor"
-        strokeWidth="1"
-        strokeOpacity="0.25"
-        fill="none"
+        d={`M ${diagramTokens.grid.borderInset} ${height - diagramTokens.grid.cornerSize} L ${diagramTokens.grid.borderInset} ${height - diagramTokens.grid.borderInset} L ${diagramTokens.grid.cornerSize} ${height - diagramTokens.grid.borderInset}`}
+        stroke={diagramTokens.color.inherited}
+        strokeWidth={diagramTokens.grid.cornerStrokeWidth}
+        strokeOpacity={diagramTokens.grid.cornerStrokeOpacity}
+        fill={diagramTokens.color.none}
       />
       <path
-        d={`M ${width - 10} ${height - 0.5} L ${width - 0.5} ${height - 0.5} L ${width - 0.5} ${height - 10}`}
-        stroke="currentColor"
-        strokeWidth="1"
-        strokeOpacity="0.25"
-        fill="none"
+        d={`M ${width - diagramTokens.grid.cornerSize} ${height - diagramTokens.grid.borderInset} L ${width - diagramTokens.grid.borderInset} ${height - diagramTokens.grid.borderInset} L ${width - diagramTokens.grid.borderInset} ${height - diagramTokens.grid.cornerSize}`}
+        stroke={diagramTokens.color.inherited}
+        strokeWidth={diagramTokens.grid.cornerStrokeWidth}
+        strokeOpacity={diagramTokens.grid.cornerStrokeOpacity}
+        fill={diagramTokens.color.none}
       />
     </>
   );

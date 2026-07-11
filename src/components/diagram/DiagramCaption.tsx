@@ -1,4 +1,5 @@
 import * as React from "react";
+import { diagramTokens } from "./diagram-tokens";
 
 type DiagramCaptionProps = {
   x: number;
@@ -13,8 +14,8 @@ export function DiagramCaption({
   x,
   y,
   text,
-  fill = "#9ca3af",
-  fontSize = 9.5,
+  fill = diagramTokens.text.caption.fill,
+  fontSize = diagramTokens.text.caption.fontSize,
   textAnchor = "middle",
 }: DiagramCaptionProps) {
   return (
@@ -23,7 +24,7 @@ export function DiagramCaption({
       y={y}
       fill={fill}
       fontSize={fontSize}
-      fontWeight="400"
+      fontWeight={diagramTokens.text.caption.fontWeight}
       textAnchor={textAnchor}
     >
       {text}
