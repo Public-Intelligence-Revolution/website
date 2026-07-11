@@ -95,7 +95,7 @@ export default function VisionPage() {
           <div className="grid gap-x-12 gap-y-10 md:grid-cols-2 pt-4">
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-foreground">
-                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                   <path d="M12 8V12L15 15" stroke="currentColor" />
                   <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.3" />
                 </svg>
@@ -108,7 +108,7 @@ export default function VisionPage() {
 
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-foreground">
-                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                   <circle cx="12" cy="12" r="5" stroke="currentColor" />
                   <path d="M12 2v5" stroke="currentColor" strokeOpacity="0.4" />
                   <path d="M12 17v5" stroke="currentColor" strokeOpacity="0.4" />
@@ -124,7 +124,7 @@ export default function VisionPage() {
 
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-foreground">
-                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                   <path d="M9 12h6" stroke="currentColor" />
                   <path d="M12 9v6" stroke="currentColor" />
                   <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" strokeOpacity="0.4" />
@@ -138,7 +138,7 @@ export default function VisionPage() {
 
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-foreground">
-                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                   <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.3" />
                   <path d="M12 7v10" stroke="currentColor" />
                   <path d="M7 12h10" stroke="currentColor" />

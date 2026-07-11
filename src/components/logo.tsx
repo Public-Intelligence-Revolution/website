@@ -13,6 +13,7 @@ export function Logo({ className = "w-6 h-6", showText = false }: LogoProps) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={className}
+        aria-hidden="true"
       >
         {/* Coordinate orbit */}
         <circle

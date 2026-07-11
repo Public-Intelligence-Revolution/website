@@ -3,19 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/logo";
-
-const navigation = [
-  { href: "/vision", label: "Vision" },
-  { href: "/architecture", label: "Architecture" },
-  { href: "/research", label: "Research" },
-  { href: "/roadmap", label: "Roadmap" },
-  { href: "/contribute", label: "Contribute" },
-  {
-    href: "https://github.com/Public-Intelligence-Revolution",
-    label: "GitHub",
-    external: true,
-  },
-];
+import { siteNavigation } from "@/components/site-navigation";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -30,7 +18,7 @@ export function SiteHeader() {
           aria-label="Primary navigation"
           className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground"
         >
-          {navigation.map((item) => {
+          {siteNavigation.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link
@@ -41,6 +29,7 @@ export function SiteHeader() {
                 }`}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noreferrer" : undefined}
+                aria-current={isActive ? "page" : undefined}
               >
                 {item.label}
               </Link>
@@ -51,5 +40,3 @@ export function SiteHeader() {
     </header>
   );
 }
-
-

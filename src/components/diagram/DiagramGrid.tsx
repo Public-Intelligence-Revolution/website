@@ -10,6 +10,22 @@ type DiagramGridProps = {
 export function DiagramGrid({ width, height, patternId }: DiagramGridProps) {
   return (
     <>
+      <defs>
+        <pattern
+          id={patternId}
+          width={diagramTokens.grid.patternSize}
+          height={diagramTokens.grid.patternSize}
+          patternUnits="userSpaceOnUse"
+        >
+          <path
+            d={`M ${diagramTokens.grid.patternSize} 0 L 0 0 0 ${diagramTokens.grid.patternSize}`}
+            fill={diagramTokens.color.none}
+            stroke={diagramTokens.color.inherited}
+            strokeWidth={diagramTokens.grid.patternStrokeWidth}
+            strokeOpacity={diagramTokens.grid.patternStrokeOpacity}
+          />
+        </pattern>
+      </defs>
       <rect width={width} height={height} fill={`url(#${patternId})`} rx={diagramTokens.canvas.radius} />
       <rect
         x={diagramTokens.grid.borderInset}

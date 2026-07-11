@@ -8,7 +8,7 @@ const categories = [
       "Research on coordination, reliability, scaling, and the behavior of systems made from independently operated machines.",
     areas: ["Distributed scheduling", "Peer-to-peer networks", "Volunteer computing"],
     icon: (
-      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <circle cx="12" cy="12" r="3" fill="currentColor" />
         <circle cx="6" cy="6" r="1.5" fill="currentColor" fillOpacity="0.4" />
         <circle cx="18" cy="6" r="1.5" fill="currentColor" fillOpacity="0.4" />
@@ -24,7 +24,7 @@ const categories = [
       "Research on the systems required to host, serve, and operate frontier open-source AI models across shared infrastructure.",
     areas: ["AI infrastructure fundamentals", "Distributed inference", "Resource utilization"],
     icon: (
-      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" />
         <path d="M4 16L12 20L20 16" stroke="currentColor" strokeOpacity="0.5" />
         <path d="M4 8V16" stroke="currentColor" strokeOpacity="0.5" />
@@ -38,7 +38,7 @@ const categories = [
       "Research on assigning workloads to suitable nodes based on capability, health, latency, load, and network conditions.",
     areas: ["Kubernetes Scheduler", "Ray", "Load balancing"],
     icon: (
-      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <rect x="4" y="6" width="16" height="4" rx="1" stroke="currentColor" />
         <rect x="4" y="14" width="16" height="4" rx="1" stroke="currentColor" strokeOpacity="0.4" />
         <circle cx="8" cy="8" r="1" fill="currentColor" />
@@ -52,7 +52,7 @@ const categories = [
       "Research on how nodes advertise resources, report health, send heartbeats, receive assignments, and return results.",
     areas: ["Resource advertisement", "Heartbeat design", "Health checks"],
     icon: (
-      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <path d="M17 17L21 21M3 3L7 7" stroke="currentColor" />
         <circle cx="12" cy="12" r="4" stroke="currentColor" />
         <path d="M12 2v4" stroke="currentColor" strokeOpacity="0.4" />
@@ -68,7 +68,7 @@ const categories = [
       "Research on location-aware scheduling decisions that account for latency, proximity, regional capacity, and reliability.",
     areas: ["Latency", "Geographic proximity", "Regional availability"],
     icon: (
-      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.3" />
         <circle cx="12" cy="12" r="5" stroke="currentColor" />
         <circle cx="12" cy="12" r="1" fill="currentColor" />
@@ -81,7 +81,7 @@ const categories = [
       "Research into existing projects and patterns that inform the architecture without defining it.",
     areas: ["Petals", "Kubernetes", "Linux"],
     icon: (
-      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+      <svg className="w-5 h-5 text-[#D9F99D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" />
         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" strokeOpacity="0.4" />
       </svg>

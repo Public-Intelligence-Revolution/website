@@ -1,17 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
-
-const links = [
-  { href: "/vision", label: "Vision" },
-  { href: "/architecture", label: "Architecture" },
-  { href: "/research", label: "Research" },
-  { href: "/roadmap", label: "Roadmap" },
-  {
-    href: "https://github.com/Public-Intelligence-Revolution",
-    label: "GitHub",
-    external: true,
-  },
-];
+import { siteNavigation } from "@/components/site-navigation";
 
 export function SiteFooter() {
   return (
@@ -22,7 +11,7 @@ export function SiteFooter() {
           <span>Public Intelligence — Open Infrastructure Initiative</span>
         </div>
         <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-2">
-          {links.map((link) => (
+          {siteNavigation.map((link) => (
             <Link
               key={link.href}
               href={link.href}

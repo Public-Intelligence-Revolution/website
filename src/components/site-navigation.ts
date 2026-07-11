@@ -1,0 +1,12 @@
+export const siteNavigation = [
+  { href: "/vision", label: "Vision", external: false },
+  { href: "/architecture", label: "Architecture", external: false },
+  { href: "/research", label: "Research", external: false },
+  { href: "/roadmap", label: "Roadmap", external: false },
+  { href: "/contribute", label: "Contribute", external: false },
+  {
+    href: "https://github.com/Public-Intelligence-Revolution",
+    label: "GitHub",
+    external: true,
+  },
+] as const;
