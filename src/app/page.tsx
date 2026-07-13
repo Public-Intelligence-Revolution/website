@@ -111,11 +111,33 @@ export default function Home() {
           </div>
         </section>
 
+        {/* DEMO SECTION */}
+        <section aria-labelledby="demo-heading" className="space-y-6 pt-6 border-t border-border/40">
+          <div className="space-y-2">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">03 // DEMO</span>
+            <h2 id="demo-heading" className="text-2xl font-semibold tracking-tight text-foreground">
+              Public Intelligence v1 Demo
+            </h2>
+            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              A walkthrough of the first working prototype demonstrating the Website, Scheduler, Node, registration, heartbeats, and local inference.
+            </p>
+          </div>
+          <div className="relative w-full aspect-video overflow-hidden rounded-lg border border-border/40 bg-muted/20">
+            <iframe
+              src="https://www.youtube.com/embed/cGDWpOArB5I"
+              title="Public Intelligence v1 Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full border-0"
+            />
+          </div>
+        </section>
+
         {/* CURRENT MILESTONE */}
         <section aria-labelledby="milestone-heading" className="space-y-6 pt-6 border-t border-border/40">
           <div className="flex items-center gap-3">
             <span className="h-1.5 w-1.5 rounded-full bg-[#D9F99D]" />
-            <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">03 // ACTIVE ROADMAP</span>
+            <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">04 // ACTIVE ROADMAP</span>
           </div>
           <div className="grid gap-6 md:grid-cols-3 pt-2">
             <div className="md:col-span-1">

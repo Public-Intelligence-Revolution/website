@@ -4,6 +4,13 @@ The official website for **Public Intelligence** — a globally distributed, com
 
 The website communicates the project's vision, architecture, research, roadmap, and development progress.
 
+## Demo
+
+A walkthrough of the first working prototype is available on YouTube:
+[Public Intelligence v1 Demo](https://www.youtube.com/watch?v=cGDWpOArB5I)
+
+This video demonstrates the end-to-end integration of the Website, Scheduler, Node, registration, heartbeats, and local inference.
+
 ## Tech Stack
 
 - Next.js
