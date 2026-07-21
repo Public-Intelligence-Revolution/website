@@ -5,6 +5,11 @@ export const siteNavigation = [
   { href: "/roadmap", label: "Roadmap", external: false },
   { href: "/contribute", label: "Contribute", external: false },
   {
+    href: "https://x.com/PublicIntelTech",
+    label: "X (Twitter)",
+    external: true,
+  },
+  {
     href: "https://github.com/Public-Intelligence-Revolution",
     label: "GitHub",
     external: true,

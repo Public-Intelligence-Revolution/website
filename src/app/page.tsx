@@ -33,6 +33,14 @@ export default function Home() {
               Explore the Architecture
             </Link>
             <Link
+              href="https://x.com/PublicIntelTech"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-9 items-center justify-center rounded-md border border-border/60 bg-transparent px-4 text-xs font-medium text-foreground transition-colors hover:bg-muted/30"
+            >
+              X (Twitter)
+            </Link>
+            <Link
               href="https://github.com/Public-Intelligence-Revolution"
               target="_blank"
               rel="noreferrer"
