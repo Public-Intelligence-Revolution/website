@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PageShell } from "@/components/page-shell";
 import { Logo } from "@/components/logo";
 import { SystemDiagram } from "@/components/system-diagram";
+import { TwitterTimeline } from "@/components/twitter-timeline";
 
 export default function Home() {
   return (
@@ -133,11 +134,27 @@ export default function Home() {
           </div>
         </section>
 
+        {/* TWITTER / X TIMELINE */}
+        <section aria-labelledby="updates-heading" className="space-y-6 pt-6 border-t border-border/40">
+          <div className="space-y-2">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#D9F99D]">04 // LATEST UPDATES</span>
+            <h2 id="updates-heading" className="text-2xl font-semibold tracking-tight text-foreground">
+              Live Feed
+            </h2>
+            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Follow our project updates and community announcements.
+            </p>
+          </div>
+          <div className="w-full max-w-3xl mx-auto min-h-[600px] overflow-hidden rounded-lg border border-border/40 bg-muted/10 p-4 flex justify-center">
+            <TwitterTimeline />
+          </div>
+        </section>
+
         {/* CURRENT MILESTONE */}
         <section aria-labelledby="milestone-heading" className="space-y-6 pt-6 border-t border-border/40">
           <div className="flex items-center gap-3">
             <span className="h-1.5 w-1.5 rounded-full bg-[#D9F99D]" />
-            <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">04 // ACTIVE ROADMAP</span>
+            <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">05 // ACTIVE ROADMAP</span>
           </div>
           <div className="grid gap-6 md:grid-cols-3 pt-2">
             <div className="md:col-span-1">
